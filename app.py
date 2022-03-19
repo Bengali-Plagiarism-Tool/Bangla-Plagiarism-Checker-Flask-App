@@ -467,8 +467,8 @@ def index():
     if request.method=="POST":
         userinput=request.form.get("userinput")
         print(userinput+"\n\n")
-        output=findTitle(check(userinput))
-        '''
+      #  output=findTitle(check(userinput))
+      
         #For Testing during Developement
         output=[[9, 'Roy, Prabeen Kumar', 'পিতার হাতে পুত্র খুন ও ঊষারাণীর কবিতা', 1, 27.14],
         [151, 'nan', 'পাতাবাহার', 28, 74.14],
@@ -476,7 +476,7 @@ def index():
         [149, 'nan', 'সাহিত্য মেলা', 38, 72.41],
         [178, 'nan', 'অনুচ্ছেদ', 5, 35.28]]
         print(output)
-        '''
+       
         return render_template("results.html",len = len(output)-1, ResultList = output)
     return render_template("index.html")
 
