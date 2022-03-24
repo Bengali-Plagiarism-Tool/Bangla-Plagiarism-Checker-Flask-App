@@ -26,7 +26,6 @@
 	<tbody>
 {%for i in range(len, -1,-1)%}
 
-{% if ResultList[i][4]>20 %}
 <!-- table rows -->
 <tr>
 	<td>{{ResultList[i][1]}}</td>
@@ -34,7 +33,7 @@
     <td>{{ResultList[i][3]}}</td>
     <td>{{ResultList[i][4]}}</td>
 </tr>
-{% endif %}    
+   
 {%endfor%}
 </tbody>
 </table>
