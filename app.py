@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+import json
 import nltk as nl
 import os
 import sqlite3
@@ -470,8 +471,11 @@ def index():
         elif(len(userinput)>5000):
             print("To large to handle,should be within 5000 characters")
         else:
-            output=findTitle(check(userinput))
-            return render_template("results.html", len=len(output)-1, ResultList=output)
+            #output=findTitle(check(userinput))
+            #return render_template("results.html", len=len(output)-1, ResultList=output)
+            out_ele = [1, "Khatua, Mukundaram", "\u09ac\u09be\u09ac\u09be \u09ab\u09be\u09b2\u09c7\u09b6\u09cd\u09ac\u09b0\u09c7\u09b0 \u099c\u09a8\u09cd\u09ae \u09ac\u09c3\u09a4\u09cd\u09a4\u09be\u09a8\u09cd\u09a4", 4, 25.69]
+            # print(json.dumps(out_ele))
+            return out_ele,201
     return render_template("index.html")
 
 
